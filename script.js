@@ -5,7 +5,8 @@ let darkModeBtn = document.getElementById('darkmode');
 let navbar = document.getElementById('navbar');
 let navlinks = document.querySelectorAll('.navlinks');
 let footer = document.getElementById('footer');
-let gitLink = document.getElementById('githubLink')
+let gitLink = document.getElementById('githubLink');
+let navbuttons = document.querySelectorAll('.navbtn');
 
 function darkMode() {
     darkModeBtn.style.transform = "rotate(360deg)";
@@ -27,7 +28,10 @@ function darkMode() {
             document.body.style.color = "rgb(255, 255, 255)";
             footer.style.outline = "2px solid white";
             gitLink.querySelector('img').src = "svg/github-light.svg";
-            for (var i = 0; i < navlinks.length; i++) {
+            for (let j = 0; j < navbuttons.length; j++) {
+                navbuttons[j].style.color = "white";
+            }
+            for (let i = 0; i < navlinks.length; i++) {
                 navlinks[i].style.color = "white";
             }
             break;
@@ -39,7 +43,10 @@ function darkMode() {
             document.body.style.color = "rgb(0, 0, 24)";
             footer.style.outline = "2px solid rgb(0, 0, 24)";
             gitLink.querySelector('img').src = "svg/github-dark.svg";
-            for (var i = 0; i < navlinks.length; i++) {
+            for (let j = 0; j < navbuttons.length; j++) {
+                navbuttons[j].style.color = "rgb(0, 0, 24)";
+            }
+            for (let i = 0; i < navlinks.length; i++) {
                 navlinks[i].style.color = "rgb(0, 0, 24)";
             }
             break;
@@ -50,23 +57,75 @@ function darkMode() {
 
 //darkmode
 
+
+
+
+
 //carrosel de imgs
 
-const imgs = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
-let mainImg = document.getElementById('carrouselmain');
-let imgLeft = document.getElementById('carrouselsub1');
-let imgRight = document.getElementById('carrouselsub2');
+const arrowLeft = document.getElementById('larrow')
+const arrowRight = document.getElementById('rarrow')
 
-imgLeft.querySelector(img).src = imgs[0];
-mainImg.querySelector(img).src = imgs[1];
-imgRight.querySelector(img).src = imgs[2];
+const imgs = [
+    "imgs/img1.JPG",
+    "imgs/img2.jpg",
+    "imgs/img3.jpg",
+    "imgs/img4.JPG",
+    "imgs/img5.JPG"
+]
+
+let currentIndex = 1
+
+const mainImg = document.getElementById('carrouselmain')
+const imgLeft = document.getElementById('carrouselsub1')
+const imgRight = document.getElementById('carrouselsub2')
+
+function updateCarousel() {
+    mainImg.src = imgs[currentIndex]
+
+    if (currentIndex - 1 >= 0) {
+        imgLeft.src = imgs[currentIndex - 1]
+        imgLeft.style.opacity = 1
+    } else {
+        imgLeft.style.opacity = 0
+    }
+
+    if (currentIndex + 1 < imgs.length) {
+        imgRight.src = imgs[currentIndex + 1]
+        imgRight.style.opacity = 1
+    } else {
+        imgRight.style.opacity = 0
+    }
+
+    if (currentIndex === 0) {
+        arrowLeft.disabled = true
+    } else {
+        arrowLeft.disabled = false
+    }
+
+    if (currentIndex === imgs.length - 1) {
+        arrowRight.disabled = true
+    } else {
+        arrowRight.disabled = false
+    }
+}
 
 function goBack() {
-
+    if (currentIndex === 0) {
+        return
+    };
+    currentIndex -= 1
+    updateCarousel()
 }
 
 function goForward() {
-
+    if (currentIndex === imgs.length - 1) {
+        return;
+    }
+    currentIndex += 1
+    updateCarousel()
 }
+
+updateCarousel()
 
 //carrosel de imgs

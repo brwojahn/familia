@@ -9,27 +9,34 @@
 </head>
 <body>
     <nav class="navbar" id="navbar">
-            <a href="#main" class="navlinks" id="navlinks">PRINCIPAL</a>
-            <a href="#gal" class="navlinks" id="navlinks">GALERIA</a>
-            <button class="darkmode" onclick=darkMode() id="darkmode">
-                <img src="svg/sun-dark.svg" height="24" width="24">
-            </button>
+        <ul class="navlist">
+            <li><a href="#main" class="navlinks">PRINCIPAL</a></li>
+            <li><a href="#gal" class="navlinks">GALERIA</a></li>
+        </ul>
+        <button class="darkmode" onclick="darkMode()" id="darkmode">
+            <img class="darkbtnimg" src="svg/sun-dark.svg" height="24" width="24" alt="mode">
+        </button>
     </nav>
 <br>
     <section id="main" class="maincontainer">
         <h2>Pagina da Familia</h2>
-        <p>Bem vindo a pagina feita em homenagem à minha familia!</p>
+        <p>Aqui fica um pedacinho da nossa história. Nada muito elaborado, só memórias que valem a pena guardar.</p>
     </section>
 <hr>
 <br>
     <section id="gal" class="galcontainer">
         <h2 class="galtext">Galeria de fotos</h2>
-        <button id="back" onclick="goBack()"><img src="svg/"></button>
+        <div class="imgscontainer">
             <img class="carrousel_img_1" id="carrouselsub1">
             <img class="carrousel_img_main" id="carrouselmain">
             <img class="carrousel_img_2" id="carrouselsub2">
-        <button id="forward" onclick="goForward()"><img src="svg/"></button>
+        </div>
     </section>
+
+    <div class="buttonsgal">
+        <button class="navbtn" id="larrow" onclick="goBack()"><</button>
+        <button class="navbtn" id="rarrow" onclick="goForward()">></button>
+    </div>
 
     <footer class="footer" id="footer">
         <p class="footertext">Obrigado por Visitar meu site!</p>

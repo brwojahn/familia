@@ -31,6 +31,46 @@ body {
     text-decoration: none;
     font-weight: bold;
     color: rgb(0, 0, 24);
+    position: relative;
+    display: inline-block;
+    transition: transform 180ms ease, color 180ms ease;
+}
+
+.navlinks::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: currentColor;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: left;
+    transition: transform 260ms ease-in-out;
+    pointer-events: none;
+}
+
+.navlinks:hover,
+.navlinks:focus {
+    transform: translateY(-4px);
+}
+
+.navlinks:hover::after,
+.navlinks:focus::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.navlinks:focus {
+    outline: none;
+}
+
+.navlist {
+    display: flex;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
 }
 
 .darkmode {
@@ -38,6 +78,15 @@ body {
     background: transparent;
     border: none;
     outline: none;
+}
+
+.darkbtnimg {
+    display: block;
+    transition: transform 400ms ease;
+}
+
+.darkbtnimg:hover {
+    transform: scale(120%)
 }
 
 /* navbar */
@@ -55,9 +104,54 @@ body {
 /* galeria */
 
 .galcontainer {
-    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Hide any overflow from large images */
+    max-width: 100vw;
+    width: 100%;
+    height: 100vh; /* or your preferred height */
     margin: 10px;
     margin-left: 40px;
+}
+
+.carrousel_img_1,
+.carrousel_img_main,
+.carrousel_img_2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: cover;
+    height: 70vh;
+    border-radius: 7px;
+    gap: -10px;
+    max-width: 100%;
+}
+
+/* main centered image, ~15% larger than side images */
+.carrousel_img_main {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34.5%;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* side images mostly off-screen (about 80% hidden) */
+.carrousel_img_1 {
+    left: -80%; /* 80% off the left side */
+    width: 30%;
+    z-index: 1;
+}
+
+.carrousel_img_2 {
+    right: -80%; /* 80% off the right side */
+    width: 30%;
+    z-index: 1;
+}
+
+/* responsive adjustments for small screens */
+@media (max-width: 800px) {
+    .carrousel_img_main { width: 60%; max-height: 50vh; }
+    .carrousel_img_1, .carrousel_img_2 { width: 40%; left: -60%; right: -60%; }
 }
 
 /* galeria */
@@ -73,4 +167,40 @@ body {
     padding-left: 15px;
     margin: 0px;
     gap: 25px;
+}
+
+#larrow, #rarrow {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: bolder;
+    size: 200px;
+    font-size: 300%;
+}
+
+.buttonsgal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    gap: 200vh;
+    transform: translateY(-300px);
+}
+
+.navbtn:disabled {
+    color: #aaa !important;
+    background: #eeeeee00 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+.imgscontainer {
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
 }
