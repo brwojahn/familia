@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+            <a href="#main" class="navlinks" id="navlinks">PRINCIPAL</a>
+            <a href="#gal" class="navlinks" id="navlinks">GALERIA</a>
+            <button class="darkmode" onclick=darkMode() id="darkmode">
+                <img src="svg/sun-dark.svg" height="24" width="24">
+            </button>
+    </nav>
+<br>
+    <section id="main" class="maincontainer">
+        <h2>Pagina da Familia</h2>
+        <p>Bem vindo a pagina feita em homenagem à minha familia!</p>
+    </section>
+<hr>
+<br>
+    <section id="gal" class="galcontainer">
+        <h2 class="galtext">Galeria de fotos</h2>
+        <button id="back" onclick="goBack()"><img src="svg/"></button>
+            <img class="carrousel_img_1" id="carrouselsub1">
+            <img class="carrousel_img_main" id="carrouselmain">
+            <img class="carrousel_img_2" id="carrouselsub2">
+        <button id="forward" onclick="goForward()"><img src="svg/"></button>
+    </section>
+
+    <footer class="footer" id="footer">
+        <p class="footertext">Obrigado por Visitar meu site!</p>
+        <a href="https://github.com/brwojahn" id="githubLink"><img src="svg/github-dark.svg" height="24" width="24"></a>
+    </footer>
+</body>
+</html>
