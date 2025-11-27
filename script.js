@@ -79,6 +79,8 @@ let currentIndex = 1
 const mainImg = document.getElementById('carrouselmain')
 const imgLeft = document.getElementById('carrouselsub1')
 const imgRight = document.getElementById('carrouselsub2')
+const capaEscuraLeft = document.getElementById('darkopa1')
+const capaEscuraRight = document.getElementById('darkopa2')
 
 function updateCarousel() {
     mainImg.src = imgs[currentIndex]
@@ -88,6 +90,7 @@ function updateCarousel() {
         imgLeft.style.opacity = 1
     } else {
         imgLeft.style.opacity = 0
+        capaEscuraLeft.style.opacity = 0
     }
 
     if (currentIndex + 1 < imgs.length) {
@@ -95,6 +98,7 @@ function updateCarousel() {
         imgRight.style.opacity = 1
     } else {
         imgRight.style.opacity = 0
+        capaEscuraRight.style.opacity = 0
     }
 
     if (currentIndex === 0) {
@@ -129,3 +133,53 @@ function goForward() {
 updateCarousel()
 
 //carrosel de imgs
+
+
+
+
+//o que precisa ter
+
+// IF / ELSE 
+// Use para verificar uma condição. 
+//feito.
+
+// SWITCH 
+// Use para mostrar mensagens conforme uma escolha. 
+
+
+// FOR 
+// Use para percorrer uma lista. 
+
+
+// WHILE 
+// Pode ser simples. 
+
+
+// VETOR (Array) 
+
+// Deve conter: 
+
+// Lista de nomes 
+// Lista de momentos especiais 
+ 
+
+// MATRIZ 
+
+// Uma matriz simples. 
+
+
+// OBJETO 
+
+// Crie pelo menos 1 objeto que represente um membro da família.
+
+
+// DOM 
+// Use JavaScript para modificar elementos da página. 
+//feito.
+
+// EVENTOS 
+// Pelo menos um dos seguintes: 
+// onclick 
+// onmouseover 
+// addEventListener
+//onclck foi usado

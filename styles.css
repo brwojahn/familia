@@ -126,32 +126,56 @@ body {
     max-width: 100%;
 }
 
-/* main centered image, ~15% larger than side images */
 .carrousel_img_main {
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 34.5%;
+    width: 34%;
     z-index: 3;
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* side images mostly off-screen (about 80% hidden) */
 .carrousel_img_1 {
-    left: -80%; /* 80% off the left side */
-    width: 30%;
+    left: 31%; 
+    width: 350px;
+    height: 350px;
     z-index: 1;
+}
+
+.darkopa1 {
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 2;
+    left: 31%; 
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: cover;
+    border-radius: 7px;
+    gap: -10px;
+    max-width: 100%;
 }
 
 .carrousel_img_2 {
-    right: -80%; /* 80% off the right side */
-    width: 30%;
+    right: 31%; 
+    width: 350px;
+    height: 350px;
     z-index: 1;
 }
 
-/* responsive adjustments for small screens */
-@media (max-width: 800px) {
-    .carrousel_img_main { width: 60%; max-height: 50vh; }
-    .carrousel_img_1, .carrousel_img_2 { width: 40%; left: -60%; right: -60%; }
+.darkopa2 {
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 2;
+    right: 31%; 
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: cover;
+    border-radius: 7px;
+    gap: -10px;
+    max-width: 100%;
 }
 
 /* galeria */
