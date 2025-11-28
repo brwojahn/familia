@@ -8,6 +8,14 @@ let footer = document.getElementById("footer");
 let gitLink = document.getElementById("githubLink");
 let navbuttons = document.querySelectorAll(".navbtn");
 
+let botaoMostarLista = document.getElementById('mostrarBtn')
+//opcoes de nomes pq n sei usar querySelector
+
+let nome1 = document.getElementById('btn1')
+let nome2 = document.getElementById('btn2')
+let nome3 = document.getElementById('btn3')
+let nome4 = document.getElementById('btn4')
+
 function darkMode() {
   darkModeBtn.style.transform = "rotate(360deg)";
 
@@ -34,6 +42,16 @@ function darkMode() {
       for (let i = 0; i < navlinks.length; i++) {
         navlinks[i].style.color = "white";
       }
+      botaoMostarLista.style.color = "rgb(255, 255, 255)";
+      botaoMostarLista.style.border = "2px solid white";
+      button1.style.color = "rgb(255, 255, 255)";
+      button1.style.border = "2px solid white";
+      button2.style.color = "rgb(255, 255, 255)";
+      button2.style.border = "2px solid white";
+      button3.style.color = "rgb(255, 255, 255)";
+      button3.style.border = "2px solid white";
+      button4.style.color = "rgb(255, 255, 255)";
+      button4.style.border = "2px solid white";
       break;
     case false: //dark desativado
       darkModeBtn.querySelector("img").src = "svg/sun-dark.svg";
@@ -49,6 +67,16 @@ function darkMode() {
       for (let i = 0; i < navlinks.length; i++) {
         navlinks[i].style.color = "rgb(0, 0, 24)";
       }
+      botaoMostarLista.style.color = "rgb(0, 0, 24)";
+      botaoMostarLista.style.border = "2px solid rgb(0, 0, 24)";
+      button1.style.color = "rgb(0, 0, 24)";
+      button1.style.border = "2px solid rgb(0, 0, 24)";
+      button2.style.color = "rgb(0, 0, 24)";
+      button2.style.border = "2px solid rgb(0, 0, 24)";
+      button3.style.color = "rgb(0, 0, 24)";
+      button3.style.border = "2px solid rgb(0, 0, 24)";
+      button4.style.color = "rgb(0, 0, 24)";
+      button4.style.border = "2px solid rgb(0, 0, 24)";
       break;
     default:
       console.log("algo deu mt errado");
