@@ -134,6 +134,9 @@ updateCarousel()
 
 //carrosel de imgs
 
+//pessoas
+
+//pessoas
 
 
 
