@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Familia</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -21,8 +20,21 @@
     <section id="main" class="maincontainer">
         <h2>Pagina da Familia</h2>
         <p>Aqui fica um pedacinho da nossa história. Nada muito elaborado, só memórias que valem a pena guardar.</p>
-        <button class="mostrarLista" onclick=lista()>Mostrar Integrantes</button>
+        <button class="mostrarLista" onclick="listaMostrar()" id="mostrarBtn">Mostrar Integrantes</button>
+        <div class="ber">
+            <div class="nomes">
+                <button class="mostrarbotoes" id="btn1" onclick="mostrarBruno()">Bruno</button>
+                <button class="mostrarbotoes" id="btn2" onclick="mostrarLavinia()">Lavinia</button>
+                <button class="mostrarbotoes" id="btn3" onclick="mostrarClaucia()">Claucia</button>
+                <button class="mostrarbotoes" id="btn4" onclick="mostrarJonas()">Jonas</button>
+            </div>
         
+            <div class="descs">
+                <p id="nomePessoa"></p>
+                <p id="idadePessoa"></p>
+                <p id="descPessoa"></p>
+            </div>
+        </div> 
     </section>
 <hr>
 <br>
@@ -46,5 +58,7 @@
         <p class="footertext">Obrigado por Visitar meu site!</p>
         <a href="https://github.com/brwojahn" id="githubLink"><img src="svg/github-dark.svg" height="24" width="24"></a>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
