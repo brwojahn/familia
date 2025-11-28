@@ -9,12 +9,6 @@ let gitLink = document.getElementById("githubLink");
 let navbuttons = document.querySelectorAll(".navbtn");
 
 let botaoMostarLista = document.getElementById('mostrarBtn')
-//opcoes de nomes pq n sei usar querySelector
-
-let nome1 = document.getElementById('btn1')
-let nome2 = document.getElementById('btn2')
-let nome3 = document.getElementById('btn3')
-let nome4 = document.getElementById('btn4')
 
 function darkMode() {
   darkModeBtn.style.transform = "rotate(360deg)";
@@ -186,12 +180,17 @@ let nomeP = document.getElementById("nomePessoa");
 let idadeP = document.getElementById("idadePessoa");
 let descP = document.getElementById("descPessoa");
 
+//opcoes de nomes pq n sei usar querySelector
+let nome1 = document.getElementById('btn1')
+let nome2 = document.getElementById('btn2')
+let nome3 = document.getElementById('btn3')
+let nome4 = document.getElementById('btn4')
+
 let textMostrar = document.getElementById('mostrarBtn')
 
 // container das descrições
 const descsContainer = document.querySelector(".descs");
 
-// estado inicial: botões desabilitados e descrições escondidas
 button1.disabled = true;
 button2.disabled = true;
 button3.disabled = true;
@@ -204,7 +203,7 @@ textMostrar.textContent = "Mostrar Integrantes";
 
 function listaMostrar() {
     textMostrar.textContent = "X";
-  const abrir = button1.disabled; // se estão desabilitados, vamos abrir
+  const abrir = button1.disabled;
   if (abrir) {
     button1.disabled = false;
     button2.disabled = false;
